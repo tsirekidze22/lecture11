@@ -54,7 +54,146 @@ header {
     @include dFlex(space-between, start);
 
     .main-text {
-      width: 506px;
+      max-width: 506px;
+
+      h1 {
+        font-weight: 700;
+        font-size: 44px;
+        line-height: 60px;
+        color: $primaryColor;
+      }
+
+      p {
+        font-weight: 400;
+        font-size: $normalFont;
+        line-height: 24px;
+        color: $primaryColor;
+        margin-top: 40px;
+      }
     }
   }
 }
+
+.skills-section {
+  padding: 32px 0;
+  min-height: 200px;
+  width: 100%;
+  background: #edf7fa;
+
+  .skills-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: $primaryColor;
+    margin-bottom: 20px;
+  }
+
+  .skills-list {
+    @include dFlex(center, start);
+    flex-wrap: wrap;
+    column-gap: 50px;
+    row-gap: 30px;
+
+    .skill {
+      @include dFlex(space-between, center);
+      flex-direction: column;
+      width: 100px;
+      height: 120px;
+
+      img {
+        width: 90px;
+      }
+    }
+  }
+}
+
+.projects-section {
+  min-height: 500px;
+  padding: 30px 0;
+
+  .projects-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: $primaryColor;
+    margin-bottom: 20px;
+  }
+
+  .projects-list {
+    @include dFlex(space-around, start);
+    column-gap: 40px;
+    row-gap: 30px;
+    flex-wrap: wrap;
+
+    .project-card {
+      width: 350px;
+      min-height: 450px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      text-align: center;
+      color: $primaryColor;
+
+      .project-img {
+        width: 100%;
+        height: 240px;
+        background-image: url("../images/signup-page.png");
+        background-position: center;
+        background-size: cover;
+      }
+
+      .project-title {
+        margin: 20px;
+        font-size: 20px;
+        font-weight: 700;
+      }
+
+      .stack {
+        font-size: 18px;
+        font-weight: 500;
+      }
+
+      .stack-list {
+        @include dFlex(center, start);
+        column-gap: 20px;
+        margin: 30px 0;
+      }
+
+      .links-wrapper {
+        @include dFlex(space-between, start);
+        padding: 0 20px;
+
+        .link {
+          border: 1px solid $primaryColor;
+          border-radius: 30px;
+          padding: 8px 12px;
+          color: $primaryColor;
+          transition: all 0.5s ease;
+
+          &:hover {
+            background-color: $primaryColor;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}
+
+footer {
+  height: 80px;
+  @include dFlex(start, center);
+
+  .footer-content {
+    @include dFlex(space-between, center);
+    a {
+      color: $primaryColor;
+    }
+
+    .social-links {
+      .github-img {
+        width: 30px;
+        margin-left: 30px;
+      }
+    }
+  }
+}
+
+@import "./responsive";
